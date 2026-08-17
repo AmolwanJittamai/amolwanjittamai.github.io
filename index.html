@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Amolwan Jittamai — PhD Candidate in Supply Chain Management at the University of Houston. Research in supply chain transparency, sustainability, and behavioral operations." />
+  <meta name="theme-color" content="#f5f3ed" />
+  <title>Amolwan Jittamai | Supply Chain Management Researcher</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --paper: #f5f3ed;
+      --paper-2: #ecefe9;
+      --surface: rgba(255, 255, 255, 0.63);
+      --surface-solid: #fbfaf7;
+      --ink: #27332f;
+      --muted: #65716c;
+      --sage: #75877e;
+      --sage-deep: #445c51;
+      --sage-soft: #dce4de;
+      --line: rgba(68, 92, 81, 0.16);
+      --shadow: 0 22px 55px rgba(54, 67, 61, 0.10);
+      --radius: 26px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 86% 7%, rgba(202, 214, 205, 0.72), transparent 28rem),
+        radial-gradient(circle at 8% 36%, rgba(225, 218, 207, 0.62), transparent 24rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: var(--sage-soft); }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 8px;
+      z-index: 100;
+      background: var(--ink);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+    .skip-link:focus { left: 8px; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(245, 243, 237, 0.82);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.12rem;
+      letter-spacing: -0.01em;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 160ms ease;
+    }
+    .nav-links a:hover, .nav-links a:focus { color: var(--sage-deep); }
+
+    header { padding: 74px 0 54px; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr 0.72fr;
+      align-items: center;
+      gap: clamp(36px, 7vw, 88px);
+    }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--sage-deep);
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+    h1, h2, h3 { margin-top: 0; }
+    h1 {
+      margin-bottom: 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.3rem, 7vw, 6.4rem);
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+      font-weight: 500;
+    }
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+    h3 {
+      font-size: 1.02rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    p { margin: 0 0 14px; }
+    .hero-copy {
+      max-width: 720px;
+      font-size: clamp(1.08rem, 2vw, 1.34rem);
+      color: #4a5852;
+      line-height: 1.65;
+    }
+    .hero-copy strong { color: var(--ink); font-weight: 600; }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid var(--sage-deep);
+      background: var(--sage-deep);
+      color: #fff;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+    .button:hover, .button:focus { transform: translateY(-1px); background: #344a40; }
+    .button.secondary { background: transparent; color: var(--sage-deep); }
+    .button.secondary:hover, .button.secondary:focus { background: rgba(255,255,255,.6); }
+
+    .portrait-shell {
+      position: relative;
+      width: min(100%, 390px);
+      justify-self: end;
+      padding: 14px;
+      background: rgba(255,255,255,.44);
+      border: 1px solid rgba(255,255,255,.75);
+      border-radius: 42% 42% 34% 34% / 28% 28% 24% 24%;
+      box-shadow: var(--shadow);
+    }
+    .portrait {
+      aspect-ratio: 4 / 5;
+      width: 100%;
+      object-fit: cover;
+      object-position: 50% 28%;
+      border-radius: 42% 42% 34% 34% / 28% 28% 24% 24%;
+      filter: saturate(.88) contrast(.98);
+    }
+    .portrait-note {
+      position: absolute;
+      right: -10px;
+      bottom: 32px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: var(--surface-solid);
+      border: 1px solid var(--line);
+      color: var(--sage-deep);
+      font-size: 0.78rem;
+      font-weight: 700;
+      box-shadow: 0 12px 28px rgba(54,67,61,.10);
+    }
+
+    section { padding: 76px 0; }
+    .section-kicker {
+      color: var(--sage-deep);
+      font-weight: 700;
+      font-size: .76rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-intro { max-width: 720px; color: var(--muted); font-size: 1.05rem; }
+    .section-head { margin-bottom: 34px; }
+
+    .soft-band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(230, 234, 227, .52);
+    }
+
+    .interest-grid, .paper-grid, .mini-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .interest-grid { grid-template-columns: repeat(3, 1fr); }
+    .paper-grid { grid-template-columns: repeat(2, 1fr); }
+    .mini-grid { grid-template-columns: repeat(3, 1fr); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 24px;
+      box-shadow: 0 13px 34px rgba(54,67,61,.045);
+    }
+    .card p { color: var(--muted); }
+    .number {
+      display: inline-grid;
+      place-items: center;
+      width: 33px;
+      height: 33px;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      background: var(--sage-soft);
+      color: var(--sage-deep);
+      font-weight: 800;
+      font-size: .79rem;
+    }
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--sage-deep);
+      font-size: .77rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .paper-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.34rem;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+      margin-bottom: 12px;
+    }
+    .coauthors { font-size: .9rem; }
+
+    .dissertation {
+      display: grid;
+      grid-template-columns: .84fr 1.16fr;
+      gap: 26px;
+      align-items: start;
+    }
+    .dissertation-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+      line-height: 1.2;
+      letter-spacing: -.025em;
+    }
+    .defense { color: var(--sage-deep); font-weight: 700; }
+    .essay-list { display: grid; gap: 12px; }
+    .essay {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 17px 0;
+      border-top: 1px solid var(--line);
+    }
+    .essay:first-child { border-top: 0; padding-top: 0; }
+    .essay-index {
+      color: var(--sage-deep);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+    }
+    .essay p { color: var(--muted); margin: 0; }
+
+    .timeline { display: grid; gap: 0; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 30px;
+      padding: 25px 0;
+      border-top: 1px solid var(--line);
+    }
+    .timeline-item:first-child { border-top: 0; padding-top: 0; }
+    .when { color: var(--muted); font-size: .89rem; }
+    .role-meta { color: var(--sage-deep); font-weight: 650; margin-bottom: 8px; }
+    .details { color: var(--muted); }
+    .details ul { margin: 9px 0 0; padding-left: 1.15rem; }
+    .details li { margin: 5px 0; }
+    .metric {
+      margin-top: 13px;
+      padding: 12px 14px;
+      border-left: 3px solid var(--sage);
+      background: rgba(220,228,222,.42);
+      border-radius: 0 10px 10px 0;
+      color: #4a5852;
+      font-size: .94rem;
+    }
+
+    .education-row {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .degree {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+    .degree:first-child { border-top: 0; padding-top: 0; }
+    .degree p { color: var(--muted); margin: 4px 0 0; }
+    .school { color: var(--sage-deep); font-weight: 650; }
+
+    .skills-wrap { display: flex; flex-wrap: wrap; gap: 9px; }
+    .skill {
+      display: inline-flex;
+      padding: 8px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.48);
+      color: #53605a;
+      font-size: .84rem;
+    }
+
+    .award-list { display: grid; gap: 15px; }
+    .award {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--line);
+    }
+    .award:last-child { border-bottom: 0; padding-bottom: 0; }
+    .award p { color: var(--muted); margin: 3px 0 0; }
+    .award-year { color: var(--sage-deep); font-weight: 700; white-space: nowrap; }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 28px;
+      align-items: end;
+      padding: clamp(28px, 5vw, 54px);
+      border-radius: 34px;
+      background: var(--sage-deep);
+      color: #f8f8f4;
+      box-shadow: var(--shadow);
+    }
+    .contact-card h2 { color: white; margin-bottom: 14px; }
+    .contact-card p { color: rgba(255,255,255,.76); max-width: 690px; }
+    .contact-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 10px; }
+    .contact-card .button { background: #f7f6f1; color: var(--sage-deep); border-color: #f7f6f1; }
+    .contact-card .button.secondary { color: #fff; background: transparent; border-color: rgba(255,255,255,.48); }
+
+    footer {
+      padding: 26px 0 34px;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+
+    @media (max-width: 880px) {
+      .hero, .dissertation, .education-row, .contact-card { grid-template-columns: 1fr; }
+      .portrait-shell { justify-self: start; width: min(78vw, 390px); }
+      .portrait-note { right: -4px; }
+      .interest-grid, .mini-grid { grid-template-columns: 1fr; }
+      .paper-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; gap: 5px; }
+      .contact-actions { justify-content: flex-start; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      .nav-inner { min-height: 62px; }
+      .nav-links a:nth-child(2), .nav-links a:nth-child(3) { display: none; }
+      header { padding-top: 50px; }
+      section { padding: 58px 0; }
+      h1 { font-size: clamp(3rem, 16vw, 4.7rem); }
+      .hero-actions .button { width: 100%; }
+      .award { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+
+    @media print {
+      nav, .hero-actions, .contact-card, footer { display: none !important; }
+      body { background: white; color: black; font-size: 11pt; }
+      header, section { padding: 20px 0; }
+      .card { box-shadow: none; background: white; break-inside: avoid; }
+      .portrait-shell { max-width: 230px; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav aria-label="Primary navigation">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Amolwan Jittamai</a>
+      <div class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header id="top">
+      <div class="wrap hero">
+        <div>
+          <p class="eyebrow">PhD Candidate · Supply Chain Management</p>
+          <h1>Amolwan<br />Jittamai</h1>
+          <p class="hero-copy">
+            I study how <strong>transparency and sustainability practices shape decisions</strong> across consumers, managers, and emerging human–AI collaborations in supply chains.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="mailto:ajittamai@uh.edu">Email me</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/amolwan-jittamai/" target="_blank" rel="noopener noreferrer" aria-label="View Amolwan Jittamai on LinkedIn">LinkedIn</a>
+            <a class="button secondary" href="Amolwan-Jittamai-CV.docx" download>Download full CV</a>
+          </div>
+        </div>
+        <div class="portrait-shell">
+          <img class="portrait" src="amolwan-jittamai.jpg" alt="Professional headshot of Amolwan Jittamai" />
+          <div class="portrait-note">Houston, Texas</div>
+        </div>
+      </div>
+    </header>
+
+    <section id="research" class="soft-band">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Research</p>
+          <h2>Behavioral questions at the intersection of supply chains and sustainability.</h2>
+          <p class="section-intro">My research interests center on supply chain transparency, sustainable supply chain management, and behavioral operations.</p>
+        </div>
+
+        <div class="interest-grid">
+          <article class="card">
+            <span class="number">01</span>
+            <h3>Supply chain transparency</h3>
+            <p>How disclosure — including disclosure of shortcomings — changes consumer perceptions, trust, and product valuation.</p>
+          </article>
+          <article class="card">
+            <span class="number">02</span>
+            <h3>Sustainable operations</h3>
+            <p>How organizations and managers prioritize social and environmental sustainability practices across global supply chains.</p>
+          </article>
+          <article class="card">
+            <span class="number">03</span>
+            <h3>Behavioral operations + AI</h3>
+            <p>How human decision-makers interact with AI in sustainability decisions, and how those collaborations influence outcomes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Selected scholarship</p>
+          <h2>Working papers</h2>
+        </div>
+        <div class="paper-grid">
+          <article class="card">
+            <span class="tag">Working paper</span>
+            <div class="paper-title">Does Honesty Pay? Voluntary Self-Disclosure of Supplier Sustainability Deficits and Consumer Valuations of Products</div>
+            <p class="coauthors">With Ravi Aron, Jinghui (Jove) Hou, and Praveen Ashok Pathak.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Working paper</span>
+            <div class="paper-title">Social vs. Environmental Priorities: Explaining Managerial Preferences in Supplier Sustainability Practice Implementation</div>
+            <p class="coauthors">With Ravi Aron, Jinghui (Jove) Hou, and Praveen Ashok Pathak.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-band">
+      <div class="wrap dissertation">
+        <div>
+          <p class="section-kicker">Dissertation</p>
+          <div class="dissertation-title">From Disclosure to Decision: Transparency and Sustainability Across Human and AI Actors in Supply Chains</div>
+          <p class="defense">Expected defense: May 2027</p>
+        </div>
+        <div class="essay-list">
+          <div class="essay">
+            <span class="essay-index">I</span>
+            <p>Examines the impact of disclosing supplier sustainability shortcomings on consumer outcomes.</p>
+          </div>
+          <div class="essay">
+            <span class="essay-index">II</span>
+            <p>Examines the role of supply chain decision-makers in sustainability decision allocation.</p>
+          </div>
+          <div class="essay">
+            <span class="essay-index">III</span>
+            <p>In development: examines human–AI collaboration in sustainability decision-making.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Teaching</p>
+          <h2>Making analytical ideas practical, curious, and collaborative.</h2>
+          <p class="section-intro">My teaching philosophy centers on cultivating curiosity, understanding students' individual goals, and creating a classroom where every voice counts.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="when">Fall 2025 · Spring 2026</div>
+            <div>
+              <h3>Instructor — Supply Chain Management Fundamentals</h3>
+              <div class="role-meta">University of Houston · C.T. Bauer College of Business</div>
+              <div class="details">
+                <p>Taught the full Plan–Buy–Make–Deliver cycle, including strategy development, forecasting, S&amp;OP, purchasing, supplier management, project management, logistics, process analysis, inventory control, and continuous improvement.</p>
+                <div class="metric">Course evaluations exceeded departmental and college averages across both face-to-face and asynchronous online formats.</div>
+              </div>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="when">Fall 2022</div>
+            <div>
+              <h3>Instructional Assistant — Data Visualization</h3>
+              <div class="role-meta">University of Houston · C.T. Bauer College of Business</div>
+              <div class="details"><p>Designed Tableau assignments and quizzes and led a team visualization exercise focused on communicating data clearly.</p></div>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="when">2017 · 2018</div>
+            <div>
+              <h3>Undergraduate Teaching Assistant — Python &amp; Computer Networking</h3>
+              <div class="role-meta">Syracuse University · School of Information Studies</div>
+              <div class="details"><p>Supported in-class labs, office hours, and large laboratory sections, including classes of up to 300 students.</p></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="soft-band">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Experience</p>
+          <h2>Research and industry experience</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="when">Jan 2023 — Present</div>
+            <div>
+              <h3>Graduate Research Assistant</h3>
+              <div class="role-meta">University of Houston · C.T. Bauer College of Business</div>
+              <div class="details">
+                <ul>
+                  <li>Designed multi-phase behavioral experiments on sustainability prioritization in global apparel supply chains.</li>
+                  <li>Developed and validated survey measures and applied regression modeling for hypothesis testing.</li>
+                  <li>Designed transparency experiments and tested mediation models using the PROCESS Macro.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="when">Jun — Aug 2026</div>
+            <div>
+              <h3>Strategic Planning Intern</h3>
+              <div class="role-meta">Talos</div>
+              <div class="details"><p>Built a cost of equity and WACC model using the Damodaran CAPM framework and bottom-up beta methodology.</p></div>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="when">May 2021 — May 2022</div>
+            <div>
+              <h3>Graduate Research Assistant</h3>
+              <div class="role-meta">Boston College · Carroll School of Management</div>
+              <div class="details"><p>Designed a machine-learning approach to analyze discussion topics in Yelp restaurant reviews and a Qualtrics survey for human-annotation validation.</p></div>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="when">Jun — Jul 2019</div>
+            <div>
+              <h3>Business Analyst Intern</h3>
+              <div class="role-meta">Aware Group</div>
+              <div class="details"><p>Consulted clients on software-development business requirements and authored Software Requirements Specifications.</p></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Presentations & recognition</p>
+          <h2>Recent academic activity</h2>
+        </div>
+        <div class="mini-grid">
+          <article class="card">
+            <span class="tag">Conference presentations</span>
+            <h3>POMS 36th Annual Conference</h3>
+            <p>Reno, NV · May 7–11, 2026</p>
+            <p>Presented research on social vs. environmental priorities in supplier sustainability practice implementation.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Conference presentations</span>
+            <h3>2025 INFORMS Annual Meeting + POMS 35th</h3>
+            <p>Atlanta, GA · 2025</p>
+            <p>Presented “Does Honesty Pay?” on voluntary self-disclosure of supplier sustainability deficits.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Recognition</span>
+            <h3>Three Minute Thesis Finalist</h3>
+            <p>University-wide finalist · 2025</p>
+            <p>Selected to present doctoral research to a non-specialist audience in three minutes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="soft-band">
+      <div class="wrap education-row">
+        <div>
+          <p class="section-kicker">Education</p>
+          <h2>Academic background</h2>
+          <div class="degree">
+            <h3>PhD Candidate in Supply Chain Management</h3>
+            <p><span class="school">University of Houston · C.T. Bauer College of Business</span><br />2022 — Present</p>
+          </div>
+          <div class="degree">
+            <h3>Master of Business Administration</h3>
+            <p><span class="school">Boston College</span><br />2020 — 2022 · GPA 3.907 · With Distinction</p>
+          </div>
+          <div class="degree">
+            <h3>Bachelor's Degree in Information Management and Technology</h3>
+            <p><span class="school">Syracuse University</span><br />2016 — 2019 · GPA 3.964 · Summa Cum Laude</p>
+          </div>
+        </div>
+        <aside class="card">
+          <span class="tag">Methods & tools</span>
+          <h3>Quantitative research toolkit</h3>
+          <p>Experience across experimental, econometric, marketing, and machine-learning methods.</p>
+          <div class="skills-wrap" aria-label="Research methods and software">
+            <span class="skill">Regression</span>
+            <span class="skill">Matching</span>
+            <span class="skill">Panel Data</span>
+            <span class="skill">Difference-in-Differences</span>
+            <span class="skill">Instrumental Variables</span>
+            <span class="skill">Regression Discontinuity</span>
+            <span class="skill">Choice Modeling</span>
+            <span class="skill">Causal Inference</span>
+            <span class="skill">Machine Learning</span>
+            <span class="skill">R</span>
+            <span class="skill">Python</span>
+            <span class="skill">Stata</span>
+            <span class="skill">Tableau</span>
+            <span class="skill">SPSS</span>
+            <span class="skill">Qualtrics</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Awards, grants & service</p>
+          <h2>Selected recognition</h2>
+        </div>
+        <div class="card award-list">
+          <div class="award">
+            <div><h3>Behavioral Research Assistance for Doctoral Students (BRADS) Grant</h3><p>C.T. Bauer College of Business · $1,000/year to support behavioral research.</p></div>
+            <div class="award-year">2025 · 2026</div>
+          </div>
+          <div class="award">
+            <div><h3>Cullen Fellowship Travel Grant</h3><p>Competitive award supporting graduate travel to conferences and research showcases.</p></div>
+            <div class="award-year">2024–2025</div>
+          </div>
+          <div class="award">
+            <div><h3>Academic peer review</h3><p>Peer reviewer for the International Conference on Information Systems (ICIS) and Information &amp; Management.</p></div>
+            <div class="award-year">Service</div>
+          </div>
+          <div class="award">
+            <div><h3>Certifications</h3><p>Social-Behavioral-Educational Researchers, CITI Program · Fundamentals of Digital Marketing, Google Digital Garage.</p></div>
+            <div class="award-year">Training</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-card">
+          <div>
+            <p class="section-kicker" style="color:rgba(255,255,255,.64)">Contact</p>
+            <h2>Interested in research, teaching, or collaboration?</h2>
+            <p>I am based in Houston, Texas, and currently completing my PhD in Supply Chain Management at the University of Houston.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="button" href="mailto:ajittamai@uh.edu">ajittamai@uh.edu</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/amolwan-jittamai/" target="_blank" rel="noopener noreferrer" aria-label="View Amolwan Jittamai on LinkedIn">LinkedIn</a>
+            <a class="button secondary" href="Amolwan-Jittamai-CV.docx" download>Full CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Amolwan Jittamai</span>
+      <span>Research · Teaching · Supply Chain Management</span>
+    </div>
+  </footer>
+</body>
+</html>
